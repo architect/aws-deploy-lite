@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "node test/package-test.mjs"
+    "test": "node test/deploy-test.mjs"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

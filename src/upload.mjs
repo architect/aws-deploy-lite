@@ -4,7 +4,7 @@ import zip from 'zip-dir'
 import exists from './exists.mjs'
 
 /** upload a file to an s3 bucket using content aware hash for key */
-export default async function upload ({bucket, folder}) {
+export default async function upload ({bucket, folder, region='us-west-2'}) {
 
   let body = await zip(folder)
   let key = crypto.createHash('sha256').update(body).digest('base64')
@@ -17,6 +17,7 @@ export default async function upload ({bucket, folder}) {
       Bucket: bucket,
       Key: key,
       Body: body,
+      region,
     }).promise()
   }
 

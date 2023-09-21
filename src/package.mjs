@@ -3,7 +3,7 @@ import yaml from 'js-yaml'
 import upload from './upload.mjs'
 
 // used to walk the resources, maybe uploading code, and then rewriting the template w S3 paths
-export default async function pkg ({pathToTemplate, bucket}) {
+export default async function pkg ({pathToTemplate, bucket, region='us-west-2'}) {
 
   // read the Architect generated sam.json file
   let template = JSON.parse(fs.readFileSync(pathToTemplate).toString())
@@ -24,7 +24,7 @@ export default async function pkg ({pathToTemplate, bucket}) {
 
     if (prop) {
       let folder = template.Resources[name].Properties[prop]
-      let key = await upload({bucket, folder})
+      let key = await upload({bucket, folder, region})
       template.Resources[name].Properties[prop] = `s3://${bucket}/${key}` 
     }
   }

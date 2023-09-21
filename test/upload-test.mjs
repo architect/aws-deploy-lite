@@ -6,15 +6,15 @@ import upload from '../src/upload.mjs'
 
 const Bucket = 'aws-deploy-lite-test-upload'
 
-test('can upload a file', async t=> {
+test('can upload a file', async () => {
 
   // create a bucket
   let s3 = new aws.S3
-  let bucket = await s3.createBucket({ Bucket }).promise()
+  await s3.createBucket({ Bucket }).promise()
 
   // upload a file
   let folder = path.join(process.cwd(), 'test', 'mock')
-  let Key = await upload({ bucket: Bucket, folder }) 
+  let Key = await upload({ bucket: Bucket, folder })
 
   // check the file is there
   let objs = await s3.listObjectsV2({ Bucket }).promise()

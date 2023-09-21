@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "node test/package-test.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "aws-sdk": "^2.1462.0",
+    "zip-dir": "^2.0.0"
+  }
+}

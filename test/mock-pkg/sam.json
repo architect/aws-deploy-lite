@@ -1,0 +1,1 @@
+{"AWSTemplateFormatVersion":"2010-09-09","Transform":"AWS::Serverless-2016-10-31","Resources":{"MyFun":{"Type":"AWS::Serverless::Function","Properties":{"Handler":"index.handler","Runtime":"nodejs16.x","CodeUri":"/Users/brian/Repo/aws-deploy-lite/test/mock-pkg/fun"}}}}

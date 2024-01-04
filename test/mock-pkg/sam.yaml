@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  MyFun:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs16.x
+      CodeUri: >-
+        s3://aws-deploy-lite-test-pkg/0hfD5Np2EyXso9omm/FsjY3xv5+d/EiK64Z/Sc1jGac=

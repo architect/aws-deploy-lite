@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint --fix .",
-    "test": "node test/deploy-test.mjs"
+    "test": "node --test"
   },
   "engines": {
     "node": ">=16"

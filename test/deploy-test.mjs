@@ -44,7 +44,9 @@ test('can package a sam.json document', async () => {
 
   // create a bucket
   let s3 = new aws.S3({ region: 'us-west-2' })
-  await s3.createBucket({ Bucket }).promise()
+  try {
+    await s3.createBucket({ Bucket }).promise()
+  } catch(e) {}
 
   // create mock-package/sam.yaml
   await pkg({ pathToTemplate, bucket: Bucket })
